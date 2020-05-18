@@ -1,5 +1,7 @@
 package renderer
 
+import "log"
+
 type Stack []Scene
 
 func (s Stack) Peek() Scene {
@@ -24,6 +26,7 @@ func NewGameManager() GameManager {
 
 func (g *GameManager) Push(s Scene) {
 	s.Init()
+	log.Println("Init Scene")
 	g.scenes.Push(s)
 }
 

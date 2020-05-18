@@ -45,3 +45,11 @@ func (d *DisplayManager) Begin() {
 func (d *DisplayManager) End() {
 	rl.EndDrawing()
 }
+
+func (d *DisplayManager) Begin3D(camera Camera3D) {
+	rl.BeginMode3D(camera.Cam3D)
+}
+
+func (d *DisplayManager) End3D() {
+	rl.EndMode3D()
+}
