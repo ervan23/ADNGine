@@ -29,13 +29,15 @@ func (g *GameScene) Init() {
 func (g *GameScene) Draw() {
 	displayManager.Begin3D(g.camera)
 	g.mainBlock.Draw()
-	displayManager.End3D()}
+	displayManager.End3D()
+	displayManager.DrawFPS(10, 10)
+}
 
 func (g *GameScene) Update() {
 	g.camera.UpdateCamera()
 }
 
-var displayManager = renderer.NewDisplayManager(800, 650, 60, "Hello")
+var displayManager = renderer.NewDisplayManager(800, 650, 10000, "Hello")
 
 func main() {
 	defer displayManager.Close()

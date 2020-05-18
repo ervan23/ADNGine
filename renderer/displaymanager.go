@@ -53,3 +53,7 @@ func (d *DisplayManager) Begin3D(camera Camera3D) {
 func (d *DisplayManager) End3D() {
 	rl.EndMode3D()
 }
+
+func (d *DisplayManager) DrawFPS(posX, posY int) {
+	rl.DrawFPS(posX, posY)
+}
