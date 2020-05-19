@@ -1,4 +1,4 @@
-package entity
+package ui
 
 import (
 	"adngine/color"

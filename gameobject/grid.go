@@ -1,4 +1,4 @@
-package entity
+package gameobject
 
 import rl "github.com/lachee/raylib-goplus/raylib"
 

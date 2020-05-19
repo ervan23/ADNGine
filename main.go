@@ -3,8 +3,10 @@ package main
 import (
 	"adngine/color"
 	"adngine/entity"
+	"adngine/gameobject"
 	"adngine/math"
 	"adngine/renderer"
+	"adngine/ui"
 	rl "github.com/lachee/raylib-goplus/raylib"
 )
 
@@ -16,7 +18,7 @@ type GameScene struct {
 	mainGrid      entity.Entity
 	mainRectangle entity.Entity
 	lineRectangle entity.Entity
-	texts		  []entity.Entity
+	texts         []entity.Entity
 }
 
 func (g *GameScene) Init() {
@@ -29,19 +31,19 @@ func (g *GameScene) Init() {
 		renderer.CameraMode(renderer.CameraFree))
 
 	g.cubePosition = math.NewVector3(0.0, 0.0, 0.0)
-	g.mainBlock = entity.NewBlock(g.cubePosition, 2.0, 2.0, 2.0, color.Green, false)
-	g.lineBlock = entity.NewBlock(g.cubePosition, 2.0, 2.0, 2.0, color.Red, true)
-	g.mainGrid = entity.NewGrid(10, 1.0)
-	g.mainRectangle = entity.NewRectangle(10, 10, 320, 133, color.Fade(color.SkyBlue, 0.5), false)
-	g.lineRectangle = entity.NewRectangle(10, 10, 320, 133, color.Blue, true)
+	g.mainBlock = gameobject.NewBlock(g.cubePosition, 2.0, 2.0, 2.0, color.Green, false)
+	g.lineBlock = gameobject.NewBlock(g.cubePosition, 2.0, 2.0, 2.0, color.Red, true)
+	g.mainGrid = gameobject.NewGrid(10, 1.0)
+	g.mainRectangle = ui.NewRectangle(10, 10, 320, 133, color.Fade(color.SkyBlue, 0.5), false)
+	g.lineRectangle = ui.NewRectangle(10, 10, 320, 133, color.Blue, true)
 
 	g.texts = []entity.Entity{
-		entity.NewText("Free camera default controls:", 20, 20, 10, color.Black),
-		entity.NewText("- Mouse Wheel to Zoom in-out", 40, 40, 10, color.DarkGray),
-		entity.NewText("- Mouse Wheel Pressed to Pan", 40, 60, 10, color.DarkGray),
-		entity.NewText("- Alt + Mouse Wheel Pressed to Rotate", 40, 80, 10, color.DarkGray),
-		entity.NewText("- Alt + Ctrl + Mouse Wheel Pressed for Smooth Zoom", 40, 100, 10, color.DarkGray),
-		entity.NewText("- Z to zoom to (0, 0, 0)", 40, 120, 10, color.DarkGray),
+		ui.NewText("Free camera default controls:", 20, 20, 10, color.Black),
+		ui.NewText("- Mouse Wheel to Zoom in-out", 40, 40, 10, color.DarkGray),
+		ui.NewText("- Mouse Wheel Pressed to Pan", 40, 60, 10, color.DarkGray),
+		ui.NewText("- Alt + Mouse Wheel Pressed to Rotate", 40, 80, 10, color.DarkGray),
+		ui.NewText("- Alt + Ctrl + Mouse Wheel Pressed for Smooth Zoom", 40, 100, 10, color.DarkGray),
+		ui.NewText("- Z to zoom to (0, 0, 0)", 40, 120, 10, color.DarkGray),
 	}
 }
 

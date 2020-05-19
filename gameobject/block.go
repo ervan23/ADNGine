@@ -1,4 +1,4 @@
-package entity
+package gameobject
 
 import (
 	"adngine/color"
