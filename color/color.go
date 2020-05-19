@@ -1,5 +1,7 @@
 package color
 
+import rl "github.com/lachee/raylib-goplus/raylib"
+
 type Color struct {
 	R uint8
 	G uint8
@@ -8,6 +10,10 @@ type Color struct {
 }
 
 func NewColor(r, g, b, a uint8) Color { return Color{R: r, G: g, B: b, A: a} }
+
+func Fade(color Color, alpha float32) Color {
+	return Color(rl.Fade(rl.Color(color), alpha))
+}
 
 var (
 	// LightGray ...
